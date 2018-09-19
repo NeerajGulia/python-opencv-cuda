@@ -51,5 +51,5 @@ if __name__ == '__main__':
     # input('press any key to continue...')
     flow = cv2.pythoncuda.gpuOpticalFlowFarneback(prev, current, None, 0.5, 3, 15, 3, 5, 1.2, 0)
     # flow = cv2.calcOpticalFlowFarneback(prev, current, None, 0.5, 3, 15, 3, 5, 1.2, 0)
-    cv2.imwrite(os.path.join(outputdir, 'cpu_flow.png'), draw_flow(prev, flow))
+    cv2.imwrite(os.path.join(outputdir, 'gpu_flow.png'), draw_flow(prev, flow))
     print('image saved...')
