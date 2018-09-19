@@ -38,8 +38,11 @@ namespace cv
             farn->setPolySigma(poly_sigma);
             farn->setFlags(flags);
 
-            farn->calc(prev, next, flow);
+            cv::cuda::GpuMat d_flow, d_prev, d_next;
+            d_prev.upload(prev);
+            d_next.upload(next);
+            farn->calc(d_prev, d_next, d_flow);
+            d_flow.download(flow);
         }
     }
 }
-

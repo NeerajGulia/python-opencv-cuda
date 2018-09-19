@@ -17,7 +17,7 @@ namespace cv
         CV_EXPORTS_W void gpuOpticalFlowFarneback( InputArray prev, InputArray next, InputOutputArray flow,
                                            double pyr_scale, int levels, int winsize,
                                            int iterations, int poly_n, double poly_sigma,
-                                           int flags )
+                                           int flags );
                                            
     }
 }
