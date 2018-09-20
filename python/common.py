@@ -37,7 +37,7 @@ def warp_flow(img, flow):
     res = cv2.remap(img, flow, None, cv2.INTER_LINEAR)
     return res
 
-def findOpticalFlow(inputVideo, outputVideo, useCuda = False):
+def findOpticalFlow(inputVideo, outputVideo, useCuda = False, printFrames = False):
     cap = cv2.VideoCapture(inputVideo)
     # Define the codec and create VideoWriter object
     ret, prev = cap.read()
@@ -62,7 +62,8 @@ def findOpticalFlow(inputVideo, outputVideo, useCuda = False):
             output = draw_flow(g_prev, flow)
             cv2.imwrite(outputFile, output)
             g_prev = g_next
-            print('frame: ', count)
+            if printFrames:
+                print('frame: ', count)
             count += 1
         else:
             break
