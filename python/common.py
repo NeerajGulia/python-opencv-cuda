@@ -48,7 +48,7 @@ def findOpticalFlow(inputVideo, outputVideo, useCuda = False):
     g_prev = cv2.cvtColor(prev, cv2.COLOR_BGR2GRAY)
     count = 1
     start = time()
-    while(cap.isOpened() and count < 10):
+    while(cap.isOpened()):
         if ret==True:
             ret, next = cap.read()
             g_next = cv2.cvtColor(next, cv2.COLOR_BGR2GRAY)
