@@ -49,8 +49,8 @@ def findOpticalFlow(inputVideo, outputVideo, useCuda = False, printFrames = Fals
     count = 1
     start = time()
     while(cap.isOpened()):
+        ret, next = cap.read()
         if ret==True:
-            ret, next = cap.read()
             g_next = cv2.cvtColor(next, cv2.COLOR_BGR2GRAY)
             if useCuda:
                 flow = cv2.pythoncuda.gpuOpticalFlowFarneback(g_prev, g_next, None, 0.5, 3, 15, 3, 5, 1.2, 0)
