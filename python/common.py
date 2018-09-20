@@ -68,8 +68,11 @@ def findOpticalFlow(inputVideo, outputVideo, useCuda = False, printFrames = Fals
         else:
             break
     cap.release()
+    count -= 1
     # out.release()
+    totaltime = time() - start
+    speed = count/totaltime
     if useCuda:
-        print('total time in optical flow GPU processing: {:0.4f} sec, for: {} frames'.format(time() - start, count - 1))
+        print('total time in optical flow GPU processing: {:0.4f} sec, for: {} frames. FPS: {:0.2f}'.format(totaltime, count, speed))
     else:
-        print('total time in optical flow CPU processing: {:0.4f} sec, for: {} frames'.format(time() - start, count - 1))
+        print('total time in optical flow CPU processing: {:0.4f} sec, for: {} frames. FPS: {:0.2f}'.format(totaltime, count, speed))
