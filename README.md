@@ -61,6 +61,7 @@ cmake \
 1. Activate conda environment
 2. Go to folder: python/ and execute the cpu-opt_flow.py and gpu-opt_flow.py python files
 ``` python cpu-opt_flow.py ```
+
 ``` python gpu-opt_flow.py ```
 
 ### Output at my end:
