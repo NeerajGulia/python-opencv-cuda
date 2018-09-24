@@ -1,8 +1,3 @@
-set(the_description "access cuda optical flow methods from Python")
+set(the_description "access opencv cuda methods from Python")
 
-set(OPENCV_MODULE_IS_PART_OF_WORLD ON)
-
-# ocv_define_module(infy cudaoptflow WRAP python)
-ocv_define_module(pythoncuda WRAP python)
-
-ocv_warnings_disable(CMAKE_CXX_FLAGS -Woverloaded-virtual)
+ocv_define_module(pythoncuda opencv_core opencv_imgproc opencv_tracking opencv_cudaoptflow opencv_cudaarithm opencv_cudaimgproc WRAP python)
