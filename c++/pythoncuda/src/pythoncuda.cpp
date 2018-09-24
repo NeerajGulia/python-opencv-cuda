@@ -101,13 +101,14 @@ namespace cv
             const cv::cuda::GpuMat d_prevImg(prevImg);
             const cv::cuda::GpuMat d_nextImg(nextImg);
             const cv::cuda::GpuMat d_err;
-            const cv::cuda::GpuMat d_pts(prevPts.getMat().reshape(2, 1));
+            const cv::cuda::GpuMat d_pts(prevPts.getMat().reshape(2, 1)); //convert rows to 1
             cv::cuda::GpuMat d_nextPts;
             cv::cuda::GpuMat d_status;
             
             d_pyrLK_sparse->calc(d_prevImg, d_nextImg, d_pts, d_nextPts, d_status, d_err);
-            
-            d_nextPts.download(nextPts);
+            cv::Mat& nextPtsRef = nextPts.getMatRef();
+            d_nextPts.download(nextPtsRef);
+            nextPtsRef = nextPtsRef.t(); //revert the matrix to its actual shape
             d_status.download(status);
             d_err.download(err);
         }
