@@ -45,8 +45,8 @@
 //
 //################################################################################
 
-#ifndef __OPENCV_PRECOMP_H__
-#define __OPENCV_PRECOMP_H__
+#ifndef __OPENCV_PYTHONCUDA_PRECOMP_HPP__
+#define __OPENCV_PYTHONCUDA_PRECOMP_HPP__
 
 #include "opencv2/core.hpp"
 #include "opencv2/imgproc.hpp"
