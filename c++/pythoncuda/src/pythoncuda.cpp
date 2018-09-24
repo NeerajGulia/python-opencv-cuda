@@ -56,15 +56,15 @@ namespace cv
                                         InputArray prevPts, InputOutputArray nextPts,
                                         OutputArray status, OutputArray err,
                                         Size winSize = Size(21,21), int maxLevel = 3, int iterations = 30)
-        {           
+        {                       
             Ptr<cuda::SparsePyrLKOpticalFlow> d_pyrLK_sparse = cuda::SparsePyrLKOpticalFlow::create(winSize, maxLevel, iterations);
             const cv::cuda::GpuMat d_prevImg(prevImg);
             const cv::cuda::GpuMat d_nextImg(nextImg);
             const cv::cuda::GpuMat d_err;
-            const cv::cuda::GpuMat d_pts(prevPts);
+            const cv::cuda::GpuMat d_pts(prevPts.getMat().reshape(2, 1));
             cv::cuda::GpuMat d_nextPts;
             cv::cuda::GpuMat d_status;
-
+            
             d_pyrLK_sparse->calc(d_prevImg, d_nextImg, d_pts, d_nextPts, d_status, d_err);
             
             d_nextPts.download(nextPts);
