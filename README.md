@@ -66,9 +66,9 @@ python gpu-opt_flow.py
 ```
 
 ### Output at my end:
-``` total time in optical flow CPU processing: 145.7693 sec, for: 794 frames. FPS: 5.45 ```
+``` total time in optical flow CPU processing: 74.15 sec, for: 794 frames. FPS: 10.71 ```
 
-``` total time in optical flow GPU processing: 46.0397 sec, for: 794 frames. FPS: 17.25 ```
+``` total time in optical flow GPU processing: 21.98 sec, for: 794 frames. FPS: 36.12 ```
 
 ### Harware configuration:
 CPU - i7 7th Gen  
