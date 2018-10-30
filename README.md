@@ -71,6 +71,6 @@ python gpu-opt_flow.py
 ``` total time in optical flow GPU processing: 21.98 sec, for: 794 frames. FPS: 36.12 ```
 
 ### Harware configuration:
-CPU - i7 7th Gen  
-GPU - Titan X with 12GB RAM  
-RAM - 32 GB
+* CPU - i7 7th Gen  
+* GPU - [NVIDIA TITAN Xp](https://www.nvidia.com/en-us/titan/titan-xp)
+* RAM - 32 GB
