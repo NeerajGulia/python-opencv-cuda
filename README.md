@@ -16,7 +16,8 @@
 1.	Copy the folder named "pythoncuda" (inside c++ folder) to: opencv_contrib/modules
 
 ### Build opencv using following cmake command
-1. cmake (I used anaconda3 with environment named as: tensorflow_p36 (with python 3.6))
+1. create build directory inside the opencv folder, cd to the build directory
+2. cmake (I used anaconda3 with environment named as: tensorflow_p36 (with python 3.6))
 ```
 cmake \
 -DCMAKE_BUILD_TYPE=RELEASE \
